@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import img from "../../public/ bgimg.jpg" 
 export default function Login() {
   const [uname, setuname] = useState('');
   const [email, setemail] = useState();
@@ -33,8 +33,11 @@ const emailchange = (e: any) => {
     alert("you are registered")
   }
     return (
-    <div className='flex justify-center items-center h-screen '>
-      <div className="bg-white bg-opacity-65 w-[70%] rounded-md h-[70%] text-center mt-12 text-2xl flex flex-col justify-start items-center">
+    <div
+    style={{
+      backgroundImage: `url(${img})`}}
+       className='flex justify-center items-center h-screen '>
+      <div className="bg-white bg-opacity-45 w-[70%] rounded-md h-[70%] text-center mt-12 text-2xl flex flex-col justify-start items-center">
         <h1 className='text-4xl mt-8'>Sample Login Page</h1>
         <h1 className='border-b border-white w-[60%] mt-8' > </h1>
         <div className='text-2xl flex flex-col justify-center items-center h-[24rem] w-[85%] '>
@@ -43,13 +46,13 @@ const emailchange = (e: any) => {
               <>
                 <div className="flex justify-center gap-3 sm:flex-wrap">
                   <h1 className=''>Username</h1> 
-                  <div className='w-[12rem] rounded-sm overflow-hidden '>
+                  <div className='w-[16rem] rounded-sm overflow-hidden '>
                     <input type="text" className="w-full p-1 "  value={uname} onChange={usernamechange} />
                   </div>
                 </div>
                 <div className="flex justify-center gap-3 sm:flex-wrap">
                   <h1 className=''>Password</h1>
-                  <div className='w-[12rem] rounded-sm overflow-hidden '>
+                  <div className='w-[16rem] rounded-sm overflow-hidden '>
                     <input type="password" value={password} className="w-full p-1 " onChange={passchange}/>
                   </div>
                 </div>
@@ -65,20 +68,20 @@ const emailchange = (e: any) => {
               <>
                 <div className="flex justify-center gap-3 sm:flex-wrap">
                   <h1>Username</h1>
-                  <div className='w-[12rem] rounded-sm overflow-hidden '>
-                    <input type="text" className="w-full p-1 " />
+                  <div className='w-[16rem] rounded-sm overflow-hidden '>
+                    <input type="text" className="w-full p-1 " value={uname} onChange={usernamechange} />
                   </div>
                 </div>
                 <div className="flex justify-center gap-3 ml-12 sm:flex-wrap">
                   <h1>Email</h1>
-                  <div className='w-[12rem] rounded-sm overflow-hidden '>
-                    <input type="email" className="w-full p-1 " />
+                  <div className='w-[16rem] rounded-sm overflow-hidden '>
+                    <input type="email" className="w-full p-1 " value={email}  onChange={emailchange}/>
                   </div>
                 </div>
                 <div className="flex justify-center gap-3 sm:flex-wrap">
                   <h1>Password</h1>
-                  <div className='w-[12rem] rounded-sm overflow-hidden '>
-                    <input type="password" className="w-full p-1 " />
+                  <div className='w-[16rem] rounded-sm overflow-hidden '>
+                    <input type="password" className="w-full p-1 "  value={password} onChange={passchange} />
                   </div>
                 </div>
                 <div>
