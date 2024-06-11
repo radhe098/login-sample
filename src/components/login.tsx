@@ -79,7 +79,7 @@ export default function Login() {
                     <input type="text" className="w-full p-1" value={uname} onChange={usernamechange} />
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row justify-center gap-3">
+                <div className="flex lg:ml-12 flex-col sm:flex-row justify-center gap-3">
                   <h1>Email</h1>
                   <div className="w-full sm:w-[16rem] rounded-sm overflow-hidden">
                     <input type="email" className="w-full p-1" value={email} onChange={emailchange} />
