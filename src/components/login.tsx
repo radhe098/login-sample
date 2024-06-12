@@ -2,6 +2,8 @@ import rocket from "../../public/rocket.png";
 import {   useState } from 'react';
 import {motion} from 'framer-motion';
 import space from "../../public/space.jpg";
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
   const [uname, setuname] = useState('');
   const [email, setemail] = useState('');
@@ -9,6 +11,8 @@ export default function Login() {
   const [signup, setSignup] = useState(false);
   const [isClosed, setsClosed] = useState(false);
   const [launch, setlaunch] = useState(false);
+
+  const navigate = useNavigate();
 
   const toggleSignup = () => {
     setSignup(!signup);
@@ -37,8 +41,8 @@ export default function Login() {
       }, 500); // 1 second delay before launching the rocket
      
       setTimeout(() => {
-        console.log("launching rocket");
-      }, 2000); // 1 second delay before launching the rocket
+        navigate('/home');
+      }, 4000); // 1 second delay before launching the rocket
       return;
     } else {
       alert("Invalid credentials");
@@ -73,7 +77,7 @@ export default function Login() {
       transition={{ duration: 2, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
       // transition={{ duration: 0.5, ease: 'easeInOut' }}
 
-      className="bg-gray-700 bg-opacity-65 rounded-md h-auto text-center flex flex-col justify-start items-center p-4 sm:p-8 w-full max-w-4xl 
+      className="bg-gray-900 bg-opacity-65 rounded-md h-auto text-center flex flex-col justify-start items-center p-4 sm:p-8 w-full max-w-4xl 
        ">
         <h1 className="  mt-8"></h1>
         <div className="text-xl  rounded-lg sm:text-2xl flex flex-col justify-center items-center h-auto  mt-4 sm:mt-0 w-[42rem]  ">  
@@ -83,7 +87,7 @@ export default function Login() {
                 
                 <div className="flex flex-col 
                  w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
-                  <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 ' >Username</h1>
+                  <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 border-r border-white ' >Username</h1>
                   <div className="w-3/4  rounded-sm overflow-hidden">
                     <input type="password" value={uname} className=" w-full p-1" onChange={usernamechange} />
                   </div>
@@ -154,7 +158,7 @@ export default function Login() {
             opacity:1
           }}
           transition={{
-            duration: 1, // Adjust the duration based on launch state
+            duration: 1.5, // Adjust the duration based on launch state
             ease: 'easeInOut',
           }}
           className="fixed bottom-0 left-0 z-500"
