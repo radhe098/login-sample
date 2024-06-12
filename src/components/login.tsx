@@ -30,11 +30,15 @@ export default function Login() {
     const unameRegex = /^123$/i;
     const passwordRegex = /^123$/i;
     if (unameRegex.test(uname) && passwordRegex.test(password)) {
-      alert("Welcome to the page");
+      // alert("Welcome to the page");
       setsClosed(true);
       setTimeout(() => {
         setlaunch(true);
-      }, 1000); // 1 second delay before launching the rocket
+      }, 500); // 1 second delay before launching the rocket
+     
+      setTimeout(() => {
+        console.log("launching rocket");
+      }, 2000); // 1 second delay before launching the rocket
       return;
     } else {
       alert("Invalid credentials");
@@ -50,7 +54,7 @@ export default function Login() {
     <motion.div
     initial={{ width: '100%', opacity: 1 }}
     animate={
-      isClosed
+        isClosed
         ? { width: '0%', opacity: 0, scaleX: 0 , scaleY: 0, height: 0}
         : { width: '100%', opacity: 1, y: [0, -2, 0] }
     }
@@ -81,7 +85,7 @@ export default function Login() {
                  w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
                   <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 ' >Username</h1>
                   <div className="w-3/4  rounded-sm overflow-hidden">
-                    <input type="password" value={uname} className=" w-full p-1" onChange={passchange} />
+                    <input type="password" value={uname} className=" w-full p-1" onChange={usernamechange} />
                   </div>
                 </div>
                 <div className="flex flex-col 
@@ -134,7 +138,7 @@ export default function Login() {
       </motion.div>
     </motion.div> 
     {launch && (
-      <div className="w-full h-full justify-center flex">
+      <div className="w-full h-full justify-center flex mt--[600px]">
         <motion.div
           initial={{
             x: '0%',
@@ -143,8 +147,8 @@ export default function Login() {
             height: '15rem',
           }}
           animate={{
-            x: 'calc(100vw - -2rem)', // Move to the right (top-right corner)
-            y: '-220%', // Move to the top (top-right corner)
+            x: 'calc(100vw - -1rem)', // Move to the right (top-right corner)
+            y: '-300%', // Move to the top (top-right corner)
             width: '15rem',
             height: '15rem',
             opacity:1
