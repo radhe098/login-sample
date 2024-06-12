@@ -1,5 +1,5 @@
 import rocket from "../../public/rocket.png";
-import {  useEffect, useState } from 'react';
+import {   useState } from 'react';
 import {motion} from 'framer-motion';
 import space from "../../public/space.jpg";
 export default function Login() {
