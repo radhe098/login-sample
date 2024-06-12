@@ -60,8 +60,7 @@ export default function Login() {
       y: { duration: 2, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }
     }}
       style={{
-        backgroundImage: `url(${space})`, backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: `url(${space})`
       }}
       className="flex justify-center items-center h-screen bg-cover bg-center p-4 sm:p-8 "
     >
@@ -82,7 +81,7 @@ export default function Login() {
                  w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
                   <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 ' >Username</h1>
                   <div className="w-3/4  rounded-sm overflow-hidden">
-                    <input type="password" value={password} className=" w-full p-1" onChange={passchange} />
+                    <input type="password" value={uname} className=" w-full p-1" onChange={passchange} />
                   </div>
                 </div>
                 <div className="flex flex-col 
