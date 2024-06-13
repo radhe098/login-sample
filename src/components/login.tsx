@@ -89,7 +89,7 @@ export default function Login() {
                  w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
                   <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 border-r border-white ' >Username</h1>
                   <div className="w-3/4  rounded-sm overflow-hidden">
-                    <input type="password" value={uname} className=" w-full p-1" onChange={usernamechange} />
+                    <input type="text" value={uname} className=" w-full p-1" onChange={usernamechange} />
                   </div>
                 </div>
                 <div className="flex flex-col 
