@@ -31,18 +31,17 @@ export default function Login() {
   };
 
   const handlesubmit = () => {
-    const unameRegex = /^123$/i;
-    const passwordRegex = /^123$/i;
+    const unameRegex = /^Jhon Doe$/i;
+    const passwordRegex = /^jhondoe@123$/i;
     if (unameRegex.test(uname) && passwordRegex.test(password)) {
       // alert("Welcome to the page");
       setsClosed(true);
       setTimeout(() => {
         setlaunch(true);
-      }, 500); // 1 second delay before launching the rocket
-     
+      }, 500); 
       setTimeout(() => {
         navigate('/home');
-      }, 4000); // 1 second delay before launching the rocket
+      }, 2500); 
       return;
     } else {
       alert("Invalid credentials");
@@ -77,7 +76,7 @@ export default function Login() {
       transition={{ duration: 2, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
       // transition={{ duration: 0.5, ease: 'easeInOut' }}
 
-      className="bg-gray-900 bg-opacity-65 rounded-md h-auto text-center flex flex-col justify-start items-center p-4 sm:p-8 w-full max-w-4xl 
+      className="bg-gray-900 bg-opacity-65 overflow-hidden rounded-md h-auto text-center flex flex-col justify-start items-center sm:p-8  max-w-4xl 
        ">
         <h1 className="  mt-8"></h1>
         <div className="text-xl  rounded-lg sm:text-2xl flex flex-col justify-center items-center h-auto  mt-4 sm:mt-0 w-[42rem]  ">  
@@ -86,21 +85,21 @@ export default function Login() {
               <>  
                 
                 <div className="flex flex-col 
-                 w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
-                  <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 border-r border-white ' >Username</h1>
+                 rounded-xl pl-2 sm:flex-row justify-center md:p-4 ">
+                  <h1 className=' rounded-l-lg w-1/4 bg-cyan-300 border-r border-white ' >Username</h1>
                   <div className="w-3/4  rounded-sm overflow-hidden">
-                    <input type="password" value={uname} className=" w-full p-1" onChange={usernamechange} />
+                    <input type="text" value={uname} className=" w-full p-1" onChange={usernamechange} />
                   </div>
                 </div>
                 <div className="flex flex-col 
-                 w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
-                  <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 ' >Password</h1>
+                 w-[32rem] rounded-xl pl-2 sm:flex-row justify-center md:p-4">
+                  <h1 className=' rounded-l-lg w-1/4 bg-cyan-300 ' >Password</h1>
                   <div className="w-3/4  rounded-sm overflow-hidden">
                     <input type="password" value={password} className=" w-full p-1" onChange={passchange} />
                   </div>
                 </div>
                 <div>
-                  <button onClick={handlesubmit} className="border-black border bg-fuchsia-700 rounded-lg text-white text- p-1 px-4 w-auto">Submit</button>
+                  <button onClick={handlesubmit} className="border-black border bg-teal-600 rounded-md text-white text- p-1 px-4 w-auto">Submit</button>
                 </div>
                 <div>
                   <h1 onClick={toggleSignup} className="hover:text-blue-200 text-white   hover:cursor-pointer">SignUp?</h1>
@@ -110,27 +109,27 @@ export default function Login() {
               <>
                 <div className="flex flex-col 
                  w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
-                  <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 ' >Username</h1>
+                  <h1 className=' rounded-l-lg w-1/4 bg-cyan-500 ' >Username</h1>
                   <div className="w-3/4 rounded-sm overflow-hidden">
                     <input type="text" className=" w-full p-1" value={uname} onChange={usernamechange} />
                   </div>
                 </div>
                 <div className="flex flex-col 
                  w-[32rem] rounded-xl pl-2 sm:flex-row justify-center">
-                  <h1 className="rounded-l-lg w-1/4 bg-fuchsia-500 ">Email</h1>
+                  <h1 className="rounded-l-lg w-1/4 bg-cyan-500 ">Email</h1>
                   <div className="w-3/4 rounded-sm overflow-hidden">
                     <input type="email" className="w-full p-1" value={email} onChange={emailchange} />
                   </div>
                 </div>
                 <div className="flex flex-col 
-                 w-[32rem] rounded-xl pl-2 sm:flex-row justify-center ">
-                  <h1 className=' rounded-l-lg w-1/4 bg-fuchsia-500 ' >Password</h1>
+                 w-[70%] rounded-xl  sm:flex-row  ">
+                  <h1 className=' rounded-l-lg w-1/4 bg-cyan-500 ' >Password</h1>
                   <div className="w-3/4  rounded-sm overflow-hidden">
-                    <input type="password" value={password} className=" w-full p-1" onChange={passchange} />
+                    <input type="password" value={password} className=" w-full" onChange={passchange} />
                   </div>
                 </div>
                 <div>
-                  <button onClick={register} className="border-black border  bg-fuchsia-700 rounded-lg text- p-1 px-4 w-auto">Submit</button>
+                  <button onClick={register} className="border-black border text-black  bg-teal-700 rounded-lg text- p-1 px-4 w-auto">Submit</button>
                 </div>
                 <div>
                   <button onClick={toggleSignup} className="hover:text-blue-200 text-white hover:cursor-pointer">Login?</button>
@@ -142,7 +141,7 @@ export default function Login() {
       </motion.div>
     </motion.div> 
     {launch && (
-      <div className="w-full h-full justify-center flex mt--[600px]">
+      <div className="w-[60%] h-full justify-center flex mt--[600px]">
         <motion.div
           initial={{
             x: '0%',
