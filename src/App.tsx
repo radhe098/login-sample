@@ -1,5 +1,6 @@
 import Login from './components/login';
-import Opening from './components/opening';
+import Opening from './components/Opening';
+// import opening from './components/Opening';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 function App() {
   
